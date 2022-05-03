@@ -71,7 +71,7 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-Model.destroy_all
+
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -81,6 +81,58 @@ Model.destroy_all
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+Studio.destroy_all
+
+puts "There are #{Studio.all.count} Studios"
+
+new_Studio = Studio.new
+new_Studio["name"] = "Warner Bros."
+new_Studio.save
+
+puts "There are #{Studio.all.count} Studios"
+
+## ::Movies::
+
+Movie.destroy_all
+
+puts "There are #{Movie.all.count} Movies"
+
+new_Movie = Movie.new
+new_Movie["title"] = "Batman Begins"
+new_Movie["year_released"] = "2005"
+new_Movie["rated"] = "PG-13"
+new_Movie["studio_id"] = "Warner Bros."
+new_Movie.save
+
+new_Movie = Movie.new
+new_Movie["title"] = "The Dark Knight"
+new_Movie["year_released"] = "2008"
+new_Movie["rated"] = "PG-13"
+new_Movie["studio_id"] = "Warner Bros."
+new_Movie.save
+
+new_Movie = Movie.new
+new_Movie["title"] = "The Dark Knight Rises"
+new_Movie["year_released"] = "2012"
+new_Movie["rated"] = "PG-13"
+new_Movie["studio_id"] = "Warner Bros."
+new_Movie.save
+
+puts "There are #{Movie.all.count} Movies"
+
+# --  Batman Begins
+new_actor = actor.new
+new_actor["name"] = "Christian Bale" #1
+new_actor["name"] = "Michael Caine" #2
+new_actor["name"] = "Liam Neeson" #3
+new_actor["name"] = "Katie Holmes" #4
+new_actor["name"] = "Gary Oldman" #5
+new_actor.save
+
+puts "There are #{Actor.all.count} Actors"
+
+
 
 # Prints a header for the movies output
 puts "Movies"
