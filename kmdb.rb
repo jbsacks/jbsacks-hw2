@@ -84,7 +84,7 @@
 
 Studio.destroy_all
 
-puts "There are #{Studio.all.count} Studios"
+# puts "There are #{Studio.all.count} Studios"
 
 new_Studio = Studio.new
 new_Studio["name"] = "Warner Bros."
@@ -96,7 +96,7 @@ puts "There are #{Studio.all.count} Studios"
 
 Movie.destroy_all
 
-puts "There are #{Movie.all.count} Movies"
+# puts "There are #{Movie.all.count} Movies"
 
 new_Movie = Movie.new
 new_Movie["title"] = "Batman Begins"
@@ -122,16 +122,157 @@ new_Movie.save
 puts "There are #{Movie.all.count} Movies"
 
 # --  Batman Begins
-new_actor = actor.new
-new_actor["name"] = "Christian Bale" #1
-new_actor["name"] = "Michael Caine" #2
-new_actor["name"] = "Liam Neeson" #3
-new_actor["name"] = "Katie Holmes" #4
-new_actor["name"] = "Gary Oldman" #5
-new_actor.save
+
+Actor.destroy_all
+Role.destroy_all
+
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Batman Begins"
+role["actor_id"] = "Christian Bale"
+role["character_name"] = "Bruce Wayne"
+role.save
+
+
+actor = Actor.new
+actor["name"] = "Michael Caine"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Batman Begins"
+role["actor_id"] = "Michael Caine"
+role["character_name"] = "Alfred"
+role.save
+
+actor = Actor.new
+actor["name"] = "Liam Neeson"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Batman Begins"
+role["actor_id"] = "Liam Neeson"
+role["character_name"] = "Ra's Al Ghul"
+role.save
+
+actor = Actor.new
+actor["name"] = "Katie Holmes"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Batman Begins"
+role["actor_id"] = "Katie Holmes"
+role["character_name"] = "Rachel Dawes"
+role.save
+
+actor = Actor.new
+actor["name"] = "Gary Oldman"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Batman Begins"
+role["actor_id"] = "Gary Oldman"
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+# puts "There are #{Actor.all.count} Actors"
+# puts "There are #{Role.all.count} Roles"
+
+
+# --- The Dark Knight
+
+actor = Actor.new
+actor["name"] = "Heath Ledger"
+actor.save
+
+role = Role.new
+role["movie_id"] = "The Dark Knight"
+role["actor_id"] = "Heath Ledger"
+role["character_name"] = "Joker"
+role.save
+
+actor = Actor.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+
+role = Role.new
+role["movie_id"] = "The Dark Knight"
+role["actor_id"] = "Aaron Eckhart"
+role["character_name"] = "Harvey Dent"
+role.save
+
+actor = Actor.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Dark Knight"
+role["actor_id"] = "Maggie Gyllenhaal"
+role["character_name"] = "Rachel Dawes"
+role.save
+
+
+role = Role.new
+role["movie_id"] = "Dark Knight"
+role["actor_id"] = "Christian Bale"
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = "Dark Knight"
+role["actor_id"] = "Michael Caine"
+role["character_name"] = "Alfred"
+role.save
+
+# --- The Dark Knight Rises
+
+actor = Actor.new
+actor["name"] = "Tom Hardy"
+actor.save
+
+role = Role.new
+role["movie_id"] = "The Dark Knight Rises"
+role["actor_id"] = "Tom Hardy"
+role["character_name"] = "Bane"
+role.save
+
+actor = Actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+role = Role.new
+role["movie_id"] = "The Dark Knight Rises"
+role["actor_id"] = "Joseph Gordon-Levitt"
+role["character_name"] = "John Blake"
+role.save
+
+actor = Actor.new
+actor["name"] = "Anne Hathaway"
+actor.save
+
+role = Role.new
+role["movie_id"] = "Dark Knight Rises"
+role["actor_id"] = "Anne Hathaway"
+role["character_name"] = "Selina Kyle"
+role.save
+
+
+role = Role.new
+role["movie_id"] = "Dark Knight Rises"
+role["actor_id"] = "Christian Bale"
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = "Dark Knight Rises"
+role["actor_id"] = "Gary Oldman"
+role["character_name"] = "Commissioner Gordon"
+role.save
 
 puts "There are #{Actor.all.count} Actors"
-
+puts "There are #{Role.all.count} Roles"
 
 
 # Prints a header for the movies output
@@ -141,6 +282,30 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+all_movies = Movie.all
+puts all_movies
+
+# movies = movie.all
+# for movie in movies
+#     puts movie.inspect
+
+# end
+
+
+
+# Batman_Begins = Movie.find_by({"title" => "Batman Begins"})
+# puts "#{Batman_Begins["title"
+
+# movies = movie.all
+# for movie in movies
+#     title = movie["title"] 
+#     year_released = movie["year_released"]
+#     rating = movie["rating"]
+#     studio_id = movie["studio_id"]
+# puts "#{title} #{year_released} #{rating} #{studio_id}"
+# end 
+
 
 # Prints a header for the cast output
 puts ""
