@@ -283,8 +283,28 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-all_movies = Movie.all
-puts all_movies
+movies.all 
+
+
+
+# Batman_Begins = movie.find_by({"title" => "Batman Begins"})
+# puts Batman_Begins.id
+
+
+# all_movies = movies.all
+# for movie in all_movies
+#     title = movies["title"]
+#     year_released = movies["year_released"]
+#     rating = movies["rating"]
+#     studio = movies["studio_id"]
+# puts "#{title} #{year_released}"
+
+# end 
+
+# puts all_movies.title
+# puts all_movies.year_released
+# puts all_movies.rating
+# puts all_movies.studio_id
 
 # movies = movie.all
 # for movie in movies
