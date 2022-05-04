@@ -283,17 +283,20 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-# all_movies = movies.all
-# for movie in all_movies
-#     title = movie["title"]
-#     year_released = movie["year_released"]
-#     rating = movie["rating"]
-#     studio = movie["studio_id"]
-# puts "#{title} #{year_released} #{rating} #{studio}"
-# end
+movies_list = ["Batman Begins", "The Dark Knight", "The Dark Knight Rises"]
+puts movies_list
+
+all_movies = movie.all
+for movie in all_movies
+    title = movie["title"]
+    year_released = movie["year_released"]
+    rating = movie["rating"]
+    studio = movie["studio_id"]
+puts "#{title} #{year_released} #{rating} #{studio}"
+end
 
 
-# movies_list = ["Batman Begins", "The Dark Knight", "The Dark Knight Rises"]
+
 # year_released_list = ["2005", "2008", "2012"]
 # puts movies_list, year_released_list
 
