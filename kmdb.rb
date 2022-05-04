@@ -283,23 +283,26 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-movies.all 
+# all_movies = movies.all
+# for movie in all_movies
+#     title = movie["title"]
+#     year_released = movie["year_released"]
+#     rating = movie["rating"]
+#     studio = movie["studio_id"]
+# puts "#{title} #{year_released} #{rating} #{studio}"
+# end
 
+
+# movies_list = ["Batman Begins", "The Dark Knight", "The Dark Knight Rises"]
+# year_released_list = ["2005", "2008", "2012"]
+# puts movies_list, year_released_list
 
 
 # Batman_Begins = movie.find_by({"title" => "Batman Begins"})
 # puts Batman_Begins.id
 
 
-# all_movies = movies.all
-# for movie in all_movies
-#     title = movies["title"]
-#     year_released = movies["year_released"]
-#     rating = movies["rating"]
-#     studio = movies["studio_id"]
-# puts "#{title} #{year_released}"
 
-# end 
 
 # puts all_movies.title
 # puts all_movies.year_released
@@ -335,3 +338,17 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+all_roles = role.all
+puts roles.inspect
+for role in all_roles
+    actor_id = role["actor_id"]
+    actor_record = Actor.fund_by({"id" => actor_id})
+    actor_name = actor_record["name"]
+    role_name = role["character_name"]
+
+    movie_record = movie.find_by({"id" => role["movie_id"]})
+    puts movie_record.inspect
+    movie_names = movie_record["title"]
+puts "#{movie_names} #{actor_name} #{role}"
+end
